@@ -1,7 +1,7 @@
 const images = {};
 
 const grid = [];
-let DIMENSION = 104; // max dimensions = 104, before it uses up the entire stack memory with recursions lol
+let DIMENSION = 20; // max dimensions = 104, before it uses up the entire stack memory with recursions lol
 
 const UP = 1;       //      ㅗ
 const RIGHT = 2;    //      ㅏ
@@ -93,7 +93,7 @@ function printGridState() {
         const formattedRow = row.map(v => text[v.wave] || v.wave).join("  ").toString();
         ret += `${formattedRow}\n\n`;
     }
-    // (ret);
+    console.log(ret);
 }
 
 function yieldOneState(wave = WAVE_ARRAY) {
@@ -258,6 +258,7 @@ function draw() {
  */
 
 module.exports = { 
+    UP, RIGHT, DOWN, LEFT, BLANK,
     grid, DIMENSION, INITIAL_WAVE, WAVE_ARRAY,
     constraints, FACING_DOWN, FACING_LEFT, FACING_RIGHT, FACING_UP,
     WAVE_STATES, populateWaveStates, initGrid, text, printGridState,
